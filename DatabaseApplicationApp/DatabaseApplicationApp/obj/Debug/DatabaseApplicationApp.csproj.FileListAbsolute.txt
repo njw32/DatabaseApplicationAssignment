@@ -1,0 +1,10 @@
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\bin\Debug\DatabaseApplicationApp.exe.config
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\bin\Debug\DatabaseApplicationApp.exe
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\bin\Debug\DatabaseApplicationApp.pdb
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\obj\Debug\DatabaseApplicationApp.csprojAssemblyReference.cache
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\obj\Debug\DatabaseApplicationApp.Form1.resources
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\obj\Debug\DatabaseApplicationApp.Properties.Resources.resources
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\obj\Debug\DatabaseApplicationApp.csproj.GenerateResource.cache
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\obj\Debug\DatabaseApplicationApp.csproj.CoreCompileInputs.cache
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\obj\Debug\DatabaseApplicationApp.exe
+H:\Database\DatabaseApplicationApp\DatabaseApplicationApp\obj\Debug\DatabaseApplicationApp.pdb
