@@ -1,0 +1,10 @@
+H:\AuthorsApplication\AuthorsApplication\bin\Debug\AuthorsApplication.exe.config
+H:\AuthorsApplication\AuthorsApplication\bin\Debug\AuthorsApplication.exe
+H:\AuthorsApplication\AuthorsApplication\bin\Debug\AuthorsApplication.pdb
+H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csprojAssemblyReference.cache
+H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.AuthorsApp.resources
+H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.Properties.Resources.resources
+H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csproj.GenerateResource.cache
+H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csproj.CoreCompileInputs.cache
+H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.exe
+H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.pdb
