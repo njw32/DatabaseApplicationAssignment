@@ -8,3 +8,13 @@ H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csproj.Gen
 H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csproj.CoreCompileInputs.cache
 H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.exe
 H:\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.pdb
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\bin\Debug\AuthorsApplication.exe.config
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\bin\Debug\AuthorsApplication.exe
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\bin\Debug\AuthorsApplication.pdb
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csprojAssemblyReference.cache
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.AuthorsApp.resources
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.Properties.Resources.resources
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csproj.GenerateResource.cache
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csproj.CoreCompileInputs.cache
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.exe
+H:\Database\gitrepo\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.pdb
