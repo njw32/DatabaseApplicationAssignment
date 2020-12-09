@@ -16,35 +16,49 @@ namespace AuthorsApplication
         public AuthorsApp()
         {
             InitializeComponent();
+            InitializeForm();
         }
 
+        public SqlConnection conn;
+        public String connString;
+
+        private void InitializeForm()
+        {
+            connString = Properties.Settings.Default.pubsConnectionString;
+
+            conn = new SqlConnection(connString);
+
+        }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             //TODO - LIST Books per author - need view
             string currentSelection;
 
-            currentSelection = (listAuthors.SelectedItem as DataRowView)["au_lname"].ToString();
+            currentSelection = (listAuthors.SelectedItem as DataRowView)["au_id"].ToString();
 
             labelBooks.Text = "Item: " + currentSelection;
 
-            textBoxAddress.Text = "123";
+            textBoxAddress.Text = "123 Sample St.";
+            textBoxCity.Text = "City";
+            textBoxState.Text = "State";
+            textBoxZip.Text = "Zip";
 
-            string cn_string = Properties.Settings.Default.pubsConnectionString;
+            if (conn.State != ConnectionState.Open) conn.Open();
 
-            SqlConnection cn_connection = new SqlConnection(cn_string);
-
-            if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
-
-            string sql_Text = "SELECT address FROM authors WHERE au_lname='" + currentSelection + "'";
-
-            SqlCommand selectCommand = new SqlCommand(sql_Text, cn_connection);
-
+            string sql_Address = "SELECT address FROM authors WHERE au_id='" + currentSelection + "'";
+            SqlCommand selectAddress = new SqlCommand(sql_Address, conn);
+            string sql_City = "SELECT city FROM authors WHERE au_id='" + currentSelection + "'";
+            SqlCommand selectCity = new SqlCommand(sql_City, conn);
+            string sql_State = "SELECT state FROM authors WHERE au_id='" + currentSelection + "'";
+            SqlCommand selectState = new SqlCommand(sql_State, conn);
+            string sql_Zip = "SELECT zip FROM authors WHERE au_id='" + currentSelection + "'";
+            SqlCommand selectZip = new SqlCommand(sql_Zip, conn);
 
             //note: O'Leary does not correctly display due to parentheses
             try
             { 
-                labelAddress.Text = selectCommand.ExecuteScalar().ToString(); 
+                labelAddress.Text = selectAddress.ExecuteScalar().ToString() + "\n" + selectCity.ExecuteScalar().ToString() + ", " + selectState.ExecuteScalar().ToString() + "\n" + selectZip.ExecuteScalar().ToString();
             }
             catch (SqlException)
             {
@@ -61,18 +75,14 @@ namespace AuthorsApplication
         }
 
         private void loadData()
-        {
-            string cn_string = Properties.Settings.Default.pubsConnectionString;
+        { 
+            if (conn.State != ConnectionState.Open) conn.Open();
 
-            SqlConnection cn_connection = new SqlConnection(cn_string);
-
-            if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
-
-            string sql_Text = "SELECT au_lname, au_fname, address FROM authors";
+            string sql_Text = "SELECT au_id, au_lname, au_fname, address FROM authors";
 
             DataTable tbl = new DataTable();
 
-            SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, cn_connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(sql_Text, conn);
             adapter.Fill(tbl);
 
           
