@@ -1,6 +1,3 @@
-USE pubs;
-GO
-
 CREATE or ALTER PROCEDURE proc_ainfo
 @au_id varchar(11)
 ,@address varchar(40)
@@ -37,4 +34,3 @@ BEGIN
 	END CATCH
 	RETURN @returnValue
 END
-GO
