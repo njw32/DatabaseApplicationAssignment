@@ -22,6 +22,7 @@ namespace AuthorsApplication
 
         public SqlConnection conn;
         public String connString;
+        public String selectedItem;
 
         private void InitializeForm()
         {
@@ -43,13 +44,14 @@ namespace AuthorsApplication
             string currentSelection;
 
             currentSelection = (listAuthors.SelectedItem as DataRowView)["au_id"].ToString();
+            selectedItem = (listAuthors.SelectedItem as DataRowView)["au_id"].ToString();
 
             labelBooks.Text = "Item: " + currentSelection + "books";
 
             textBoxAddress.Text = "123 Sample St.";
             textBoxCity.Text = "City";
             textBoxState.Text = "State";
-            textBoxZip.Text = "Zip";
+            textBoxZip.Text = "600046";
 
             if (conn.State != ConnectionState.Open) conn.Open();
 
@@ -113,7 +115,35 @@ namespace AuthorsApplication
         {
             string newAddress = textBoxAddress.Text;
 
-            MessageBox.Show("new Address is:" + newAddress);
+            //run stored procedure with selected data
+            MessageBox.Show(createStoredProcedure(newAddress).ExecuteNonQuery().ToString());
+
+            //MessageBox.Show("new Address is:" + newAddress);
+        }
+        public SqlCommand createStoredProcedure(string newAddress)
+        { 
+            string sp_name = "proc_ainfo";
+
+            if (conn.State != ConnectionState.Open) conn.Open();
+
+            SqlCommand rSproc = new SqlCommand(sp_name, conn);
+            rSproc.CommandType = CommandType.StoredProcedure;
+            
+            //incoming parameters
+            rSproc.Parameters.AddWithValue("au_id", selectedItem);
+            rSproc.Parameters.AddWithValue("@address", textBoxAddress.Text);
+            rSproc.Parameters.AddWithValue("@city", textBoxCity.Text);
+            rSproc.Parameters.AddWithValue("@state", textBoxState.Text);
+            rSproc.Parameters.AddWithValue("@zip", textBoxZip.Text);
+
+            //return parameter
+            SqlParameter spReturn = new SqlParameter();
+            spReturn.ParameterName = "@returnValue";
+            spReturn.SqlDbType = System.Data.SqlDbType.Int;
+            spReturn.Direction = ParameterDirection.ReturnValue;
+            rSproc.Parameters.Add(spReturn);
+
+            return rSproc;
         }
     }
 }
