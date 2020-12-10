@@ -20,12 +20,14 @@ namespace AuthorsApplication
             InitializeForm();
         }
 
+        //public vatiables called by many methods
         public SqlConnection conn;
         public String connString;
         public String selectedItem;
 
         private void InitializeForm()
         {
+            //create connection and connection string
             connString = Properties.Settings.Default.pubsConnectionString;
 
             conn = new SqlConnection(connString);
@@ -43,15 +45,18 @@ namespace AuthorsApplication
             //TODO - LIST Books per author - need view
             string currentSelection;
 
+
             currentSelection = (listAuthors.SelectedItem as DataRowView)["au_id"].ToString();
+            //set global variable - used for sp button
             selectedItem = (listAuthors.SelectedItem as DataRowView)["au_id"].ToString();
 
-            labelBooks.Text = "Item: " + currentSelection + "books";
-
+            labelBooks.Text = "Item ID: " + currentSelection;
+            
+            //textBox with sample text
             textBoxAddress.Text = "123 Sample St.";
             textBoxCity.Text = "City";
-            textBoxState.Text = "State";
-            textBoxZip.Text = "600046";
+            textBoxState.Text = "MI";
+            textBoxZip.Text = "60004";
 
             if (conn.State != ConnectionState.Open) conn.Open();
 
@@ -86,7 +91,7 @@ namespace AuthorsApplication
         { 
             if (conn.State != ConnectionState.Open) conn.Open();
 
-            string sql_Text = "SELECT au_id, au_lname, au_fname, address FROM authors";
+            string sql_Text = "SELECT au_id, au_lname FROM authors";
 
             DataTable tbl = new DataTable();
 
@@ -116,7 +121,9 @@ namespace AuthorsApplication
             string newAddress = textBoxAddress.Text;
 
             //run stored procedure with selected data
-            MessageBox.Show(createStoredProcedure(newAddress).ExecuteNonQuery().ToString());
+            createStoredProcedure(newAddress).ExecuteNonQuery();
+            MessageBox.Show("New Address Saved");
+            loadData();
 
             //MessageBox.Show("new Address is:" + newAddress);
         }
