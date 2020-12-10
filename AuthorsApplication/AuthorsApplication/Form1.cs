@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace AuthorsApplication
 {
@@ -28,6 +29,12 @@ namespace AuthorsApplication
 
             conn = new SqlConnection(connString);
 
+            //run sql files - generate procedure
+            string script = File.ReadAllText("setup.sql");
+            if (conn.State != ConnectionState.Open) conn.Open();
+            SqlCommand createScript = new SqlCommand(script, conn);
+            createScript.ExecuteNonQuery();
+
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -37,7 +44,7 @@ namespace AuthorsApplication
 
             currentSelection = (listAuthors.SelectedItem as DataRowView)["au_id"].ToString();
 
-            labelBooks.Text = "Item: " + currentSelection;
+            labelBooks.Text = "Item: " + currentSelection + "books";
 
             textBoxAddress.Text = "123 Sample St.";
             textBoxCity.Text = "City";
@@ -55,14 +62,13 @@ namespace AuthorsApplication
             string sql_Zip = "SELECT zip FROM authors WHERE au_id='" + currentSelection + "'";
             SqlCommand selectZip = new SqlCommand(sql_Zip, conn);
 
-            //note: O'Leary does not correctly display due to parentheses
             try
             { 
                 labelAddress.Text = selectAddress.ExecuteScalar().ToString() + "\n" + selectCity.ExecuteScalar().ToString() + ", " + selectState.ExecuteScalar().ToString() + "\n" + selectZip.ExecuteScalar().ToString();
             }
             catch (SqlException)
             {
-                labelAddress.Text = "O'leary";
+                labelAddress.Text = "Not Correctly Pulled from DB";
             }
 
           
