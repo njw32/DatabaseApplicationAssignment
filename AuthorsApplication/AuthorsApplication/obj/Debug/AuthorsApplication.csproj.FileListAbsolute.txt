@@ -28,3 +28,13 @@ H:\Database\gitrepo2\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApp
 H:\Database\gitrepo2\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csproj.CoreCompileInputs.cache
 H:\Database\gitrepo2\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.exe
 H:\Database\gitrepo2\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.pdb
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\bin\Debug\AuthorsApplication.exe.config
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\bin\Debug\AuthorsApplication.exe
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\bin\Debug\AuthorsApplication.pdb
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csprojAssemblyReference.cache
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.AuthorsApp.resources
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.Properties.Resources.resources
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csproj.GenerateResource.cache
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.csproj.CoreCompileInputs.cache
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.exe
+C:\Users\nht2\Documents\GitHub\DatabaseApplicationAssignment\AuthorsApplication\AuthorsApplication\obj\Debug\AuthorsApplication.pdb

@@ -27,6 +27,10 @@ namespace AuthorsApplication
 
         private void InitializeForm()
         {
+            //create view
+            string scriptView = File.ReadAllText("view.sql");
+
+
             //create connection and connection string
             connString = Properties.Settings.Default.pubsConnectionString;
 
@@ -45,6 +49,7 @@ namespace AuthorsApplication
             //TODO - LIST Books per author - need view
             string currentSelection;
 
+            //TODO - Alter view to restrict to the currently selected author...
 
             currentSelection = (listAuthors.SelectedItem as DataRowView)["au_id"].ToString();
             //set global variable - used for sp button
