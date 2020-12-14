@@ -32,6 +32,13 @@ namespace AuthorsApplication
 
             conn = new SqlConnection(connString);
 
+            //run sql files - create view
+            string viewScript = File.ReadAllText("testViewNoParam.sql");
+            //Below is commented out because it is mostly a copy of how the procedure was created and I am not sure how that works.
+            //SQLCommand createViewScript = new SQLCommand(viewScript, conn);
+           
+
+
             //run sql files - generate procedure
             string script = File.ReadAllText("setup.sql");
             if (conn.State != ConnectionState.Open) conn.Open();
