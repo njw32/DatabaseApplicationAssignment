@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.listAuthors = new System.Windows.Forms.ListBox();
-            this.labelBooks = new System.Windows.Forms.Label();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.labelAddress = new System.Windows.Forms.Label();
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.textBoxState = new System.Windows.Forms.TextBox();
             this.textBoxZip = new System.Windows.Forms.TextBox();
-            this.viewList = new System.Windows.Forms.ListBox();
+            this.bookList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // listAuthors
@@ -49,16 +48,6 @@
             this.listAuthors.Size = new System.Drawing.Size(292, 344);
             this.listAuthors.TabIndex = 0;
             this.listAuthors.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // labelBooks
-            // 
-            this.labelBooks.AutoSize = true;
-            this.labelBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBooks.Location = new System.Drawing.Point(364, 12);
-            this.labelBooks.Name = "labelBooks";
-            this.labelBooks.Size = new System.Drawing.Size(41, 20);
-            this.labelBooks.TabIndex = 1;
-            this.labelBooks.Text = "Item";
             // 
             // textBoxAddress
             // 
@@ -115,27 +104,29 @@
             this.textBoxZip.Size = new System.Drawing.Size(172, 26);
             this.textBoxZip.TabIndex = 7;
             // 
-            // viewList
+            // bookList
             // 
-            this.viewList.FormattingEnabled = true;
-            this.viewList.Location = new System.Drawing.Point(368, 36);
-            this.viewList.Name = "viewList";
-            this.viewList.Size = new System.Drawing.Size(135, 316);
-            this.viewList.TabIndex = 8;
+            this.bookList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookList.FormattingEnabled = true;
+            this.bookList.ItemHeight = 20;
+            this.bookList.Location = new System.Drawing.Point(354, 12);
+            this.bookList.Name = "bookList";
+            this.bookList.Size = new System.Drawing.Size(154, 344);
+            this.bookList.TabIndex = 8;
+            this.bookList.SelectedIndexChanged += new System.EventHandler(this.viewList_SelectedIndexChanged);
             // 
             // AuthorsApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 394);
-            this.Controls.Add(this.viewList);
+            this.Controls.Add(this.bookList);
             this.Controls.Add(this.textBoxZip);
             this.Controls.Add(this.textBoxState);
             this.Controls.Add(this.textBoxCity);
             this.Controls.Add(this.labelAddress);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxAddress);
-            this.Controls.Add(this.labelBooks);
             this.Controls.Add(this.listAuthors);
             this.Name = "AuthorsApp";
             this.Text = "Authors App";
@@ -148,14 +139,13 @@
         #endregion
 
         private System.Windows.Forms.ListBox listAuthors;
-        private System.Windows.Forms.Label labelBooks;
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.TextBox textBoxState;
         private System.Windows.Forms.TextBox textBoxZip;
-        private System.Windows.Forms.ListBox viewList;
+        private System.Windows.Forms.ListBox bookList;
     }
 }
 

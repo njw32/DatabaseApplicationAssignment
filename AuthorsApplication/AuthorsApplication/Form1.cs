@@ -36,8 +36,10 @@ namespace AuthorsApplication
             string script = File.ReadAllText("setup.sql");
             if (conn.State != ConnectionState.Open) conn.Open();
             SqlCommand createScript = new SqlCommand(script, conn);
-            string view = File.ReadAllText("view.sql");
             createScript.ExecuteNonQuery();
+           
+            //generate view - needs !exists statement
+            string view = File.ReadAllText("view.sql");
             SqlCommand createView = new SqlCommand(view, conn);
             //createView.ExecuteNonQuery();
 
@@ -62,15 +64,18 @@ namespace AuthorsApplication
             textBoxZip.Text = "60004";
 
             if (conn.State != ConnectionState.Open) conn.Open();
-
+            
+            //fills bookList with data pulled from view
             DataTable table = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM testViewNoParam", conn);
             adapter.Fill(table);
 
-            viewList.ValueMember = "au_id";
-            viewList.DisplayMember = "au_lname";
-            viewList.DataSource = table;
+            bookList.ValueMember = "au_id";
+            bookList.DisplayMember = "au_lname";
+            bookList.DataSource = table;
 
+
+            //pulls selected address from db
             string sql_Address = "SELECT address FROM authors WHERE au_id='" + currentSelection + "'";
             SqlCommand selectAddress = new SqlCommand(sql_Address, conn);
             string sql_City = "SELECT city FROM authors WHERE au_id='" + currentSelection + "'";
@@ -162,6 +167,11 @@ namespace AuthorsApplication
             rSproc.Parameters.Add(spReturn);
 
             return rSproc;
+        }
+
+        private void viewList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
