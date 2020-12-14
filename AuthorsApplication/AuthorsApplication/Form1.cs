@@ -51,7 +51,7 @@ namespace AuthorsApplication
 
             //TODO - LIST Books per author - need view
             string currentSelection;
-
+            // We will have to use an ALTER VIEW statement to change the au_id in the WHERE clause
 
             currentSelection = (listAuthors.SelectedItem as DataRowView)["au_id"].ToString();
             //set global variable - used for sp button
