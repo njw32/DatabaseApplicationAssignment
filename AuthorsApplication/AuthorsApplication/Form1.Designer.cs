@@ -36,6 +36,7 @@
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.textBoxState = new System.Windows.Forms.TextBox();
             this.textBoxZip = new System.Windows.Forms.TextBox();
+            this.viewList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // listAuthors
@@ -114,11 +115,20 @@
             this.textBoxZip.Size = new System.Drawing.Size(172, 26);
             this.textBoxZip.TabIndex = 7;
             // 
+            // viewList
+            // 
+            this.viewList.FormattingEnabled = true;
+            this.viewList.Location = new System.Drawing.Point(368, 36);
+            this.viewList.Name = "viewList";
+            this.viewList.Size = new System.Drawing.Size(135, 316);
+            this.viewList.TabIndex = 8;
+            // 
             // AuthorsApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 394);
+            this.Controls.Add(this.viewList);
             this.Controls.Add(this.textBoxZip);
             this.Controls.Add(this.textBoxState);
             this.Controls.Add(this.textBoxCity);
@@ -145,6 +155,7 @@
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.TextBox textBoxState;
         private System.Windows.Forms.TextBox textBoxZip;
+        private System.Windows.Forms.ListBox viewList;
     }
 }
 

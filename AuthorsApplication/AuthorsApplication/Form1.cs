@@ -36,7 +36,10 @@ namespace AuthorsApplication
             string script = File.ReadAllText("setup.sql");
             if (conn.State != ConnectionState.Open) conn.Open();
             SqlCommand createScript = new SqlCommand(script, conn);
+            string view = File.ReadAllText("view.sql");
             createScript.ExecuteNonQuery();
+            SqlCommand createView = new SqlCommand(view, conn);
+            //createView.ExecuteNonQuery();
 
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,7 +53,7 @@ namespace AuthorsApplication
             //set global variable - used for sp button
             selectedItem = (listAuthors.SelectedItem as DataRowView)["au_id"].ToString();
 
-            labelBooks.Text = "Item ID: " + currentSelection;
+       
             
             //textBox with sample text
             textBoxAddress.Text = "123 Sample St.";
@@ -59,6 +62,14 @@ namespace AuthorsApplication
             textBoxZip.Text = "60004";
 
             if (conn.State != ConnectionState.Open) conn.Open();
+
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM testViewNoParam", conn);
+            adapter.Fill(table);
+
+            viewList.ValueMember = "au_id";
+            viewList.DisplayMember = "au_lname";
+            viewList.DataSource = table;
 
             string sql_Address = "SELECT address FROM authors WHERE au_id='" + currentSelection + "'";
             SqlCommand selectAddress = new SqlCommand(sql_Address, conn);
